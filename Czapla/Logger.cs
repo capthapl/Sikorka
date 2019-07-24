@@ -25,8 +25,9 @@ namespace Czapla
         }
 
         public void AddMessage(string message)
-        {
-            messages.Add(message);
+        { 
+            while(logging) { }
+                messages.Add(message);
         }
 
         public async Task Log()
