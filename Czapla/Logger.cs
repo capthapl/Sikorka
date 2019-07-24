@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -20,7 +21,7 @@ namespace Czapla
             string nowdate = DateTime.Now.ToString("MM-dd-yyyy");
             this.fileName = $"{fileName}_{nowdate}.log";
 
-            if (!File.Exists(Directory.GetCurrentDirectory()+"/"+this.fileName))
+            if (!File.Exists(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location)+ "/"+this.fileName))
                 File.Create(Directory.GetCurrentDirectory()+"/"+this.fileName).Close();
         }
 
@@ -34,7 +35,7 @@ namespace Czapla
         {
             logging = true;
             string nowdate = DateTime.Now.ToString("MM-dd-yyyy");
-            var logWriter = new System.IO.StreamWriter(Directory.GetCurrentDirectory()+"/"+fileName, true);
+            var logWriter = new System.IO.StreamWriter(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + "/"+fileName, true);
             foreach (var item in messages)
             {
                 await logWriter.WriteLineAsync($"[{DateTime.Now.ToString("MM-dd-yyyy HH:mm:ss")}] {item}");
