@@ -22,7 +22,7 @@ namespace Czapla
             this.fileName = $"{fileName}_{nowdate}.log";
 
             if (!File.Exists(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location)+ "/"+this.fileName))
-                File.Create(Directory.GetCurrentDirectory()+"/"+this.fileName).Close();
+                File.Create(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + "/" + this.fileName).Close();
         }
 
         public void AddMessage(string message)
