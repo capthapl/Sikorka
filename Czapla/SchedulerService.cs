@@ -14,6 +14,10 @@ namespace Czapla
             Schedule<LogTask>().ToRunEvery(5).Seconds();
             Schedule<GetChampionsTask>().ToRunEvery(6).Hours();
             Schedule<GetClassesTask>().ToRunEvery(6).Hours();
+            Schedule<GetItemsTask>().ToRunEvery(6).Hours();
+            Schedule<GetOriginsTask>().ToRunEvery(6).Hours();
+            Schedule<GetTierlistTask>().ToRunEvery(6).Hours();
+
         }
     }
 }
