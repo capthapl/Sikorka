@@ -1,3 +1,39 @@
-﻿<Properties>
+﻿<Properties StartupConfiguration="{C9916A6F-827D-4577-8A64-FC74CCEACCCB}|Default">
+  <MonoDevelop.Ide.ItemProperties.Czapla PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Drzewo/MongoController.cs">
+    <Files>
+      <File FileName="Drzewo/MongoController.cs" Line="21" Column="1" />
+      <File FileName="Czapla/Tasks/LogTask.cs" Line="1" Column="1" />
+      <File FileName="Czapla/Program.cs" Line="1" Column="1" />
+      <File FileName="Czapla/SchedulerService.cs" Line="16" Column="63" />
+      <File FileName="Czapla/Tasks/LeagueOfLegends/TFT/GetChampionsTask.cs" Line="1" Column="1" />
+      <File FileName="Drzewo/Model.cs" />
+      <File FileName="Czapla/Tasks/LeagueOfLegends/TFT/GetClassesTask.cs" Line="21" Column="30" />
+      <File FileName="Czapla/Logger.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Sikorka" expanded="True">
+            <Node name="Czapla" expanded="True">
+              <Node name="Tasks" expanded="True">
+                <Node name="LeagueOfLegends" expanded="True">
+                  <Node name="TFT" expanded="True" />
+                </Node>
+              </Node>
+            </Node>
+            <Node name="Drzewo" expanded="True">
+              <Node name="Model.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>
