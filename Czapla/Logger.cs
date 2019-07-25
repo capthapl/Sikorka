@@ -20,8 +20,8 @@ namespace Czapla
 
             string nowdate = DateTime.Now.ToString("MM-dd-yyyy");
             this.fileName = $"logs/{fileName}_{nowdate}.log";
-            if (!Directory.Exists("logs"))
-                Directory.CreateDirectory("logs");
+            if (!Directory.Exists(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + "/logs"))
+                Directory.CreateDirectory(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + "/logs");
             if (!File.Exists(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location)+ "/"+this.fileName))
                 File.Create(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + "/" + this.fileName).Close();
         }
