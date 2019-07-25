@@ -1,4 +1,4 @@
-﻿using Quartz;
+﻿using FluentScheduler;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,9 +8,9 @@ namespace Czapla.Tasks
 {
     public class LogTask : IJob
     {
-        public async Task Execute(IJobExecutionContext context)
+        public async void Execute()
         {
-           await Program.MainLogger.Log();
+            await Program.MainLogger.Log();
         }
     }
 }

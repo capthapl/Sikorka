@@ -1,5 +1,5 @@
 ﻿using Drzewo;
-using Quartz;
+using FluentScheduler;
 using RestSharp;
 using System;
 using System.Collections.Generic;
@@ -10,7 +10,7 @@ namespace Czapla.Tasks.LeagueOfLegends.TFT
 {
     public class GetChampionsTask : IJob
     {
-        public async Task Execute(IJobExecutionContext context)
+        public void Execute()
         {
             Program.MainLogger.AddMessage("GetChampionsTask - attempt to start ");
             var client = new RestClient("https://solomid-resources.s3.amazonaws.com/blitz/tft/data/champions.json");

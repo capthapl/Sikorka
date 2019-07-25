@@ -40,6 +40,7 @@ namespace Czapla
             {
                 await logWriter.WriteLineAsync($"[{DateTime.Now.ToString("MM-dd-yyyy HH:mm:ss")}] {item}");
             }
+            messages.Clear();
             logWriter.Close();
             logWriter.Dispose();
             logging = false;
