@@ -26,8 +26,8 @@ namespace Czapla
         }
 
         public void AddMessage(string message)
-        { 
-            while(logging) { }
+        {
+            while (logging) { }
                 messages.Add(message);
         }
 
@@ -42,7 +42,7 @@ namespace Czapla
             }
             logWriter.Close();
             logWriter.Dispose();
-            logging = true;
+            logging = false;
         }
     }
 }

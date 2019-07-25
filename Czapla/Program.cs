@@ -1,4 +1,5 @@
 ﻿using Czapla.Tasks;
+using Czapla.Tasks.LeagueOfLegends.TFT;
 using Quartz;
 using Quartz.Impl;
 using System;
@@ -38,9 +39,21 @@ namespace Czapla
                     .WithSimpleSchedule(x => x
                         .WithIntervalInSeconds(5)
                         .RepeatForever())
+                    .StartNow()
+                    .Build();
+
+                IJobDetail downloadLeagueOfLegendsTFTChampionsJob = JobBuilder.Create<GetChampionsTask>()
+                    .Build();
+
+                ITrigger triggerdownloadLeagueOfLegendsTFTChampionsJob = TriggerBuilder.Create()
+                    .WithSimpleSchedule(x => x
+                        .WithIntervalInHours(12)
+                        .RepeatForever())
+                    .StartNow()
                     .Build();
 
                 await scheduler.ScheduleJob(loggerJob, triggerLoggerJob);
+                await scheduler.ScheduleJob(downloadLeagueOfLegendsTFTChampionsJob, triggerdownloadLeagueOfLegendsTFTChampionsJob); 
             }
             catch (SchedulerException ex)
             {
