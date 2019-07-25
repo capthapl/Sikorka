@@ -11,12 +11,12 @@ namespace Czapla
     {
         public SchedulerService()
         {
-            Schedule<LogTask>().ToRunEvery(5).Seconds();
-            Schedule<GetChampionsTask>().ToRunEvery(6).Hours();
-            Schedule<GetClassesTask>().ToRunEvery(6).Hours();
-            Schedule<GetItemsTask>().ToRunEvery(6).Hours();
-            Schedule<GetOriginsTask>().ToRunEvery(6).Hours();
-            Schedule<GetTierlistTask>().ToRunEvery(6).Hours();
+            Schedule<LogTask>().ToRunNow().AndEvery(5).Hours();
+            Schedule<GetChampionsTask>().ToRunNow().AndEvery(5).Hours();
+            Schedule<GetClassesTask>().ToRunNow().AndEvery(5).Hours();
+            Schedule<GetItemsTask>().ToRunNow().AndEvery(5).Hours();
+            Schedule<GetOriginsTask>().ToRunNow().AndEvery(5).Hours();
+            Schedule<GetTierlistTask>().ToRunNow().AndEvery(5).Hours();
 
         }
     }

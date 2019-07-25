@@ -9,8 +9,6 @@ namespace Czapla
     class Program 
     {
         public static Logger MainLogger;
-        private static bool CloseScheduler;
-
         static void Main(string[] args)
         {
             MainLogger = new Logger("MainLogs");
@@ -25,7 +23,6 @@ namespace Czapla
             {
                 SchedulerService service = new SchedulerService();
                 JobManager.Initialize(service);
-
             }
             catch (Exception ex)
             {
