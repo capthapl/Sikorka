@@ -12,8 +12,8 @@ namespace Czapla
         public SchedulerService()
         {
             Schedule<LogTask>().ToRunEvery(5).Seconds();
-            Schedule<GetChampionsTask>().ToRunEvery(12).Hours();
-            Schedule<GetClassesTask>().ToRunEvery(12).Hours();
+            Schedule<GetChampionsTask>().ToRunEvery(6).Hours();
+            Schedule<GetClassesTask>().ToRunEvery(6).Hours();
         }
     }
 }
