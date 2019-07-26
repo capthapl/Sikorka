@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Czapla
+namespace Drzewo
 {
     public static class Configuration
     {
-        public const string CurrentDataDragonVersion = "6.24.1";
+        public const string MongoConnectionString = "mongodb://rekurencja:hermetyzacj4!@localhost:27017";
     }
 }

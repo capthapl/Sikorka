@@ -8,13 +8,12 @@ namespace Drzewo
 {
     public class MongoController
     {
-        private string connectionString = "mongodb://localhost:27017";
         private static MongoClient client;
 
         public MongoController()
         {
             if (client == null)
-                client = new MongoClient(connectionString);
+                client = new MongoClient(Configuration.MongoConnectionString);
         }
 
         public async Task InsertSingletonDocument(string databaseName, string collectionname, string documentname, string data)
