@@ -16,7 +16,7 @@ namespace Czapla.Tasks.LeagueOfLegends.TFT
             try
             {
                 Program.MainLogger.AddMessage("GetTFTTierlist - attempt to start ");
-                var data = MakeRequestAndGetResponse("https://sdolomid-resources.s3.amazonaws.com/blitz/tft/data/tierlist.json");
+                var data = MakeRequestAndGetResponse("https://solomid-resources.s3.amazonaws.com/blitz/tft/data/tierlist.json");
                 await MongoController.Instance.InsertSingletonDocument("LeagueOfLegends", "TFT", "tierlist", data);
                 Program.MainLogger.AddMessage("GetTFTTierlist - finished");
             }
