@@ -13,11 +13,17 @@ namespace Czapla.Tasks.LeagueOfLegends.Standard
     {
         public async void Execute()
         {
-            Program.MainLogger.AddMessage("GetProfileIconsTask - attempt to start ");
-            var data = requestController.MakeRequest($@"http://ddragon.leagueoflegends.com/cdn/{Configuration.CurrentDataDragonVersion}/data/en_US/profileicon.json");
-            MongoController ctr = new MongoController();
-            await ctr.InsertSingletonDocument("LeagueOfLegends", "Standard", "profileicon", data);
-            Program.MainLogger.AddMessage("GetProfileIconsTask - finished");
+            try
+            {
+                Program.MainLogger.AddMessage("GetProfileIconsTask - attempt to start ");
+                var data = MakeRequestAndGetResponse($@"http://ddragon.leagueoflegends.com/cdn/{Configuration.CurrentDataDragonVersion}/data/en_US/profileicon.json");
+                await MongoController.Instance.InsertSingletonDocument("LeagueOfLegends", "Standard", "profileicon", data);
+                Program.MainLogger.AddMessage("GetProfileIconsTask - finished");
+            }
+            catch (Exception ex)
+            {
+                Program.MainLogger.AddMessage(ex.StackTrace);
+            }
         }
     }
 }

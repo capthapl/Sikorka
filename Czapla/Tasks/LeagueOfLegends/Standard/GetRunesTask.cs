@@ -13,11 +13,17 @@ namespace Czapla.Tasks.LeagueOfLegends.Standard
     {
         public async void Execute()
         {
-            Program.MainLogger.AddMessage("GetRunesTask - attempt to start ");
-            var data = requestController.MakeRequest($@"http://ddragon.leagueoflegends.com/cdn/{Configuration.CurrentDataDragonVersion}/data/en_US/rune.json");
-            MongoController ctr = new MongoController();
-            await ctr.InsertSingletonDocument("LeagueOfLegends", "Standard", "rune", data);
-            Program.MainLogger.AddMessage("GetRunesTask - finished");
+            try
+            {
+                Program.MainLogger.AddMessage("GetRunesTask - attempt to start ");
+                var data = MakeRequestAndGetResponse($@"http://ddragon.leagueoflegends.com/cdn/{Configuration.CurrentDataDragonVersion}/data/en_US/rune.json");
+                await MongoController.Instance.InsertSingletonDocument("LeagueOfLegends", "Standard", "rune", data);
+                Program.MainLogger.AddMessage("GetRunesTask - finished");
+            }
+            catch (Exception ex)
+            {
+                Program.MainLogger.AddMessage(ex.StackTrace);
+            }
         }
     }
 }

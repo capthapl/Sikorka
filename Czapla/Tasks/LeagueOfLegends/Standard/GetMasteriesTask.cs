@@ -13,11 +13,17 @@ namespace Czapla.Tasks.LeagueOfLegends.Standard
     {
         public async void Execute()
         {
-            Program.MainLogger.AddMessage("GetMasteriesTask - attempt to start ");
-            var data = requestController.MakeRequest($@"http://ddragon.leagueoflegends.com/cdn/{Configuration.CurrentDataDragonVersion}/data/en_US/mastery.json");
-            MongoController ctr = new MongoController();
-            await ctr.InsertSingletonDocument("LeagueOfLegends", "Standard", "mastery", data);
-            Program.MainLogger.AddMessage("GetMasteriesTask - finished");
-        }
+            try
+            {
+                Program.MainLogger.AddMessage("GetMasteriesTask - attempt to start ");
+                var data = MakeRequestAndGetResponse($@"http://ddragon.leagueoflegends.com/cdn/{Configuration.CurrentDataDragonVersion}/data/en_US/mastery.json");
+                await MongoController.Instance.InsertSingletonDocument("LeagueOfLegends", "Standard", "mastery", data);
+                Program.MainLogger.AddMessage("GetMasteriesTask - finished");
+            }
+            catch (Exception ex)
+            {
+                Program.MainLogger.AddMessage(ex.StackTrace);
+            }
+}
     }
 }

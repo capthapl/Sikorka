@@ -13,11 +13,17 @@ namespace Czapla.Tasks.LeagueOfLegends.Standard
     {
         public async void Execute()
         {
-            Program.MainLogger.AddMessage("GetSummonerSpellsTask - attempt to start ");
-            var data = requestController.MakeRequest($@"http://ddragon.leagueoflegends.com/cdn/{Configuration.CurrentDataDragonVersion}/data/en_US/summoner.json");
-            MongoController ctr = new MongoController();
-            await ctr.InsertSingletonDocument("LeagueOfLegends", "Standard", "summoner", data);
-            Program.MainLogger.AddMessage("GetSummonerSpellsTask - finished");
+            try
+            {
+                Program.MainLogger.AddMessage("GetSummonerSpellsTask - attempt to start ");
+                var data = MakeRequestAndGetResponse($@"http://ddragon.leagueoflegends.com/cdn/{Configuration.CurrentDataDragonVersion}/data/en_US/summoner.json");
+                await MongoController.Instance.InsertSingletonDocument("LeagueOfLegends", "Standard", "summoner", data);
+                Program.MainLogger.AddMessage("GetSummonerSpellsTask - finished");
+            }
+            catch (Exception ex)
+            {
+                Program.MainLogger.AddMessage(ex.StackTrace);
+            }
         }
     }
 }

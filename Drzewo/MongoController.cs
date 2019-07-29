@@ -6,15 +6,31 @@ using System.Threading.Tasks;
 
 namespace Drzewo
 {
-    public class MongoController
+    public sealed class MongoController
     {
-        private static MongoClient client;
-
-        public MongoController()
+        private static MongoController instance = null;
+        private static readonly object padlock = new object();
+        MongoController()
         {
             if (client == null)
                 client = new MongoClient(Configuration.MongoConnectionString);
         }
+        public static MongoController Instance
+        {
+            get
+            {
+                lock (padlock)
+                {
+                    if (instance == null)
+                    {
+                        instance = new MongoController();
+                    }
+                    return instance;
+                }
+            }
+        }
+
+        private static MongoClient client;
 
         public async Task InsertSingletonDocument(string databaseName, string collectionname, string documentname, string data)
         {

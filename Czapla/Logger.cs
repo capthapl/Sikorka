@@ -9,7 +9,14 @@ namespace Czapla
 {
     public class Logger
     {
-        private string fileName;
+        private string shortFileName;
+        private string fileName
+        {
+            get
+            {
+                return $"logs/{shortFileName}_{DateTime.Now.ToString("MM-dd-yyyy")}.log";
+            }
+        }
         private List<string> messages;
         private bool logging;
 
@@ -17,13 +24,7 @@ namespace Czapla
         {
             logging = false;
             messages = new List<string>();
-
-            string nowdate = DateTime.Now.ToString("MM-dd-yyyy");
-            this.fileName = $"logs/{fileName}_{nowdate}.log";
-            if (!Directory.Exists(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + "/logs"))
-                Directory.CreateDirectory(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + "/logs");
-            if (!File.Exists(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location)+ "/"+this.fileName))
-                File.Create(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + "/" + this.fileName).Close();
+            this.shortFileName = fileName;
         }
 
         public void AddMessage(string message)
@@ -35,7 +36,7 @@ namespace Czapla
         public async Task Log()
         {
             logging = true;
-            string nowdate = DateTime.Now.ToString("MM-dd-yyyy");
+            CheckPathsAndIfNotExistCreate();
             var logWriter = new System.IO.StreamWriter(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + "/"+fileName, true);
             foreach (var item in messages)
             {
@@ -45,6 +46,14 @@ namespace Czapla
             logWriter.Close();
             logWriter.Dispose();
             logging = false;
+        }
+
+        private void CheckPathsAndIfNotExistCreate()
+        {
+            if (!Directory.Exists(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + "/logs"))
+                Directory.CreateDirectory(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + "/logs");
+            if (!File.Exists(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + "/" + this.fileName))
+                File.Create(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + "/" + this.fileName).Close();
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using RestSharp;
+﻿using Czapla.Exceptions;
+using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +14,7 @@ namespace Czapla
             var data = client.Execute(new RestRequest());
             if (data.StatusCode == System.Net.HttpStatusCode.OK)
                 return data.Content;
-            else throw new Exception("Request returned not ok response code");
+            else throw new BadResponseException();
         }
     }
 }

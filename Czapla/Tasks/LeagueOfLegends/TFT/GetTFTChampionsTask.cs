@@ -13,11 +13,17 @@ namespace Czapla.Tasks.LeagueOfLegends.TFT
     {
         public async void Execute()
         {
-            Program.MainLogger.AddMessage("GetTFTChampionsTask - attempt to start ");
-            var data = requestController.MakeRequest("https://solomid-resources.s3.amazonaws.com/blitz/tft/data/champions.json");
-            MongoController ctr = new MongoController();
-            await ctr.InsertSingletonDocument("LeagueOfLegends", "TFT", "champions", data);
-            Program.MainLogger.AddMessage("GetTFTChampionsTask - finished");
+            try
+            {
+                Program.MainLogger.AddMessage("GetTFTChampionsTask - attempt to start ");
+                var data = MakeRequestAndGetResponse("https://solomid-resources.s3.amazonaws.com/blitz/tft/data/champions.json");
+                await MongoController.Instance.InsertSingletonDocument("LeagueOfLegends", "TFT", "champions", data);
+                Program.MainLogger.AddMessage("GetTFTChampionsTask - finished");
+            }
+            catch (Exception ex)
+            {
+                Program.MainLogger.AddMessage(ex.StackTrace);
+            }
         }
     }
 }
