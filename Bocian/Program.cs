@@ -18,7 +18,7 @@ namespace Bocian
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-            WebHost.CreateDefaultBuilder(args).UseUrls("http://localhost:5001")
+            WebHost.CreateDefaultBuilder(args).UseUrls("http://*:5001").UseKestrel()
                 .UseStartup<Startup>();
     }
 }
