@@ -1,37 +1,38 @@
-﻿<Properties StartupConfiguration="{C9916A6F-827D-4577-8A64-FC74CCEACCCB}|Default">
+﻿<Properties StartupConfiguration="{533F14BA-7FFA-4E25-9247-8A8DE620EDAE}|Default">
   <MonoDevelop.Ide.ItemProperties.Czapla PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Drzewo/MongoController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Bocian/Properties/launchSettings.json">
     <Files>
-      <File FileName="Drzewo/MongoController.cs" Line="21" Column="1" />
-      <File FileName="Czapla/Tasks/LogTask.cs" Line="1" Column="1" />
-      <File FileName="Czapla/Program.cs" Line="1" Column="1" />
-      <File FileName="Czapla/SchedulerService.cs" Line="16" Column="63" />
-      <File FileName="Czapla/Tasks/LeagueOfLegends/TFT/GetChampionsTask.cs" Line="1" Column="1" />
-      <File FileName="Drzewo/Model.cs" />
-      <File FileName="Czapla/Tasks/LeagueOfLegends/TFT/GetClassesTask.cs" Line="21" Column="30" />
-      <File FileName="Czapla/Logger.cs" Line="1" Column="1" />
+      <File FileName="Bocian/Controllers/ValuesController.cs" Line="1" Column="1" />
+      <File FileName="Bocian/Controllers/IdentityController.cs" Line="15" Column="13" />
+      <File FileName="AuthServer/appsettings.Development.json" Line="1" Column="1" />
+      <File FileName="AuthServer/Config.cs" Line="22" Column="40" />
+      <File FileName="Bocian/Program.cs" Line="21" Column="78" />
+      <File FileName="Bocian/Startup.cs" Line="29" Column="41" />
+      <File FileName="AuthServer/Startup.cs" Line="1" Column="1" />
+      <File FileName="Bocian/Properties/launchSettings.json" Line="7" Column="47" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Sikorka" expanded="True">
-            <Node name="Czapla" expanded="True">
-              <Node name="Tasks" expanded="True">
-                <Node name="LeagueOfLegends" expanded="True">
-                  <Node name="TFT" expanded="True" />
-                </Node>
+            <Node name="AuthServer" expanded="True" />
+            <Node name="Bocian" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Properties" expanded="True">
+                <Node name="launchSettings.json" selected="True" />
               </Node>
             </Node>
-            <Node name="Drzewo" expanded="True">
-              <Node name="Model.cs" selected="True" />
+            <Node name="Czapla" expanded="True">
+              <Node name="Tasks" expanded="True" />
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Bocian PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
