@@ -14,7 +14,15 @@ namespace Czapla
             MainLogger = new Logger("MainLogs");
             MainLogger.AddMessage("Scheduler started");
             RunScheduler().GetAwaiter().GetResult();
-            while (true) { } 
+            while(true)
+            {
+                Console.WriteLine("Press q to exit service");
+                var input = Console.ReadLine();
+                if (input.Equals("q", StringComparison.OrdinalIgnoreCase))
+                {
+                    break;
+                }
+            }
         }
 
         private async static Task RunScheduler()
