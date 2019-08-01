@@ -2,6 +2,7 @@
 using FluentScheduler;
 using System;
 using System.Collections.Specialized;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Czapla
@@ -14,15 +15,20 @@ namespace Czapla
             MainLogger = new Logger("MainLogs");
             MainLogger.AddMessage("Scheduler started");
             RunScheduler().GetAwaiter().GetResult();
-            while(true)
+            bool createdNew;
+            var waitHandle = new EventWaitHandle(false, EventResetMode.AutoReset, "CF2D4313-33DE-489D-9721-6AFF69841DEA", out createdNew);
+            var signaled = false;
+            if (!createdNew)
             {
-                Console.WriteLine("Press q to exit service");
-                var input = Console.ReadLine();
-                if (input.Equals("q", StringComparison.OrdinalIgnoreCase))
-                {
-                    break;
-                }
+                waitHandle.Set();
+                return;
             }
+
+            do
+            {
+                signaled = waitHandle.WaitOne(TimeSpan.FromSeconds(5));
+            } while (!signaled);
+
         }
 
         private async static Task RunScheduler()
