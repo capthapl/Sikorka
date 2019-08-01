@@ -15,20 +15,13 @@ namespace Czapla
             MainLogger = new Logger("MainLogs");
             MainLogger.AddMessage("Scheduler started");
             RunScheduler().GetAwaiter().GetResult();
-            bool createdNew;
-            var waitHandle = new EventWaitHandle(false, EventResetMode.AutoReset, "CF2D4313-33DE-489D-9721-6AFF69841DEA", out createdNew);
+            var waitHandle = new EventWaitHandle(false, EventResetMode.AutoReset, "CF2D4313-33DE-489D-9721-6AFF69841DEA");
             var signaled = false;
-            if (!createdNew)
-            {
-                waitHandle.Set();
-                return;
-            }
 
             do
             {
                 signaled = waitHandle.WaitOne(TimeSpan.FromSeconds(5));
             } while (!signaled);
-
         }
 
         private async static Task RunScheduler()
