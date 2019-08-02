@@ -2,6 +2,7 @@
 using FluentScheduler;
 using System;
 using System.Collections.Specialized;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Czapla
@@ -14,7 +15,11 @@ namespace Czapla
             MainLogger = new Logger("MainLogs");
             MainLogger.AddMessage("Scheduler started");
             RunScheduler().GetAwaiter().GetResult();
-            while (true) { } 
+
+            do
+            {
+                Thread.Sleep(5);
+            } while (true);
         }
 
         private async static Task RunScheduler()

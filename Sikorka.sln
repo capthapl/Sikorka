@@ -4,7 +4,11 @@ VisualStudioVersion = 16.0.29102.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Czapla", "Czapla\Czapla.csproj", "{C9916A6F-827D-4577-8A64-FC74CCEACCCB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Drzewo", "Drzewo\Drzewo.csproj", "{02966E5B-B3DA-4268-A43B-93285D41F8A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Drzewo", "Drzewo\Drzewo.csproj", "{02966E5B-B3DA-4268-A43B-93285D41F8A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthServer", "AuthServer\AuthServer.csproj", "{478CA738-C6B6-40A8-BE34-A29BF0E192E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bocian", "Bocian\Bocian.csproj", "{EAB422A9-00EE-4307-B083-8B6C058518F3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,6 +24,14 @@ Global
 		{02966E5B-B3DA-4268-A43B-93285D41F8A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02966E5B-B3DA-4268-A43B-93285D41F8A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02966E5B-B3DA-4268-A43B-93285D41F8A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{478CA738-C6B6-40A8-BE34-A29BF0E192E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{478CA738-C6B6-40A8-BE34-A29BF0E192E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{478CA738-C6B6-40A8-BE34-A29BF0E192E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{478CA738-C6B6-40A8-BE34-A29BF0E192E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAB422A9-00EE-4307-B083-8B6C058518F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAB422A9-00EE-4307-B083-8B6C058518F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAB422A9-00EE-4307-B083-8B6C058518F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAB422A9-00EE-4307-B083-8B6C058518F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

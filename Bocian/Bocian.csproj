@@ -2,13 +2,22 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
-    <UserSecretsId>aspnet-Bocian-37649407-7F36-4E5B-AE12-55DD7330B8EE</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="IdentityServer4.AspNetIdentity" Version="2.5.0" />
-    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" Version="$(AspNetCoreAppRuntimeFrameworkVersion)">
+      <IsImplicitlyDefined>true</IsImplicitlyDefined>
+      <PrivateAssets>all</PrivateAssets>
+      <Publish>true</Publish>
+    </PackageReference>
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Remove="Controllers\ValuesController.cs" />
+  </ItemGroup>
 </Project>

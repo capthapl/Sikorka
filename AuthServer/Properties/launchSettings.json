@@ -3,28 +3,25 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:5001",
-      "sslPort": 0
+      "applicationUrl": "http://localhost:5000",
+      "sslPort": 44336
     }
   },
-  "$schema": "http://json.schemastore.org/launchsettings.json",
   "profiles": {
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "api/values",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "Bocian": {
+    "AuthServer": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "api/identity",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
-      "applicationUrl": "http://localhost:5001"
+      "applicationUrl": "https://localhost:5001;http://localhost:5000"
     }
   }
 }
