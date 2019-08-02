@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Drzewo
+namespace Drzewo.Model
 {
     public class ModelSingleton
     {
