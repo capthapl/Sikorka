@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 namespace Drzewo.Model
 {
-    public partial class TftItems : EntityBase
+    public class TftItems
     {
         [JsonProperty("key")]
         public string Key { get; set; }
@@ -38,7 +38,7 @@ namespace Drzewo.Model
         public string[] Champs { get; set; }
     }
 
-    public partial class Stat
+    public class Stat
     {
         [JsonProperty("name")]
         public string Name { get; set; }

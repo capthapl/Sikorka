@@ -7,10 +7,9 @@ using System.Text;
 namespace Drzewo.Model
 {
     [Serializable]
-    public abstract class EntityBase
+    public sealed class EntityBase<T>
     {
-        [BsonId]
-        public ObjectId Id { get; set; }
-
+        public string DocumentName { get; set; }
+        public T Data { get; set; }
     }
 }
