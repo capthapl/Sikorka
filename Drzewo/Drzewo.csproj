@@ -10,4 +10,10 @@
     <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Model\LeagueOfLegends\" />
+    <Folder Include="Model\LeagueOfLegends\TFT\" />
+    <Folder Include="Model\LeagueOfLegends\Standard\" />
+    <Folder Include="Model\Core\" />
+  </ItemGroup>
 </Project>

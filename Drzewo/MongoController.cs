@@ -1,8 +1,10 @@
 ﻿using Drzewo.Model;
+using Drzewo.Model.Core;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using Newtonsoft.Json.Linq;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Drzewo
@@ -33,22 +35,23 @@ namespace Drzewo
 
         private static MongoClient client;
 
-        public async Task InsertSingletonDocument(string databaseName, string collectionname, string documentname, EntityBase data)
+        public async Task InsertSingletonDocument<T>(string databaseName, string collectionname, string documentname, EntityBase<T> data )
         {
             try
             {
+                Console.WriteLine("insert");
                 var database = client.GetDatabase(databaseName);
-                var collection = database.GetCollection<EntityBase>(collectionname);
-                await collection.ReplaceOneAsync<EntityBase>(
-                    x=>x.
+                var collection = database.GetCollection<EntityBase<T>>(collectionname);
+                await collection.ReplaceOneAsync(
+                    x => x.DocumentName == documentname,
                     data,
                     new UpdateOptions { IsUpsert = true }
-                ); 
-            }catch(Exception ex)
-            {
-                System.Diagnostics.Debug.WriteLine(ex.Message + ex.StackTrace);
-            }
+                );
+                Console.WriteLine("end");
+            } catch (Exception ex) { 
+            Console.WriteLine(ex.Message + ex.StackTrace); }
         }
+    
         public async Task InsertSingletonDocument(string databaseName, string collectionname, string documentname, String data)
         {
             var database = client.GetDatabase(databaseName);

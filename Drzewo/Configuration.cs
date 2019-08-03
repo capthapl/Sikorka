@@ -7,11 +7,6 @@ namespace Drzewo
 {
     public static class Configuration
     {
-        public const string MongoConnectionString = "mongodb://rekurencja:hermetyzacj4!@localhost:27017";
-
-        public static T DeserializeJson<T>(string json)
-        {
-            return JsonConvert.DeserializeObject<T>(json);
-        }
+        public const string MongoConnectionString = "mongodb://localhost:27017";
     }
 }

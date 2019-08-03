@@ -15,10 +15,10 @@ namespace Czapla
             MainLogger = new Logger("MainLogs");
             MainLogger.AddMessage("Scheduler started");
             RunScheduler().GetAwaiter().GetResult();
-
+            Console.WriteLine("scheduled");
             do
             {
-                Thread.Sleep(5);
+                Thread.Sleep(50);
             } while (true);
         }
 

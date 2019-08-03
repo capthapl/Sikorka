@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-namespace Drzewo.Model
+namespace Drzewo.Model.LeagueOfLegends.TFT
 {
     public class TftItems
     {

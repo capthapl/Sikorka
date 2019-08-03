@@ -1,6 +1,8 @@
 ﻿using Czapla.Abstract;
+using Czapla.Controllers;
 using Drzewo;
 using Drzewo.Model;
+using Drzewo.Model.LeagueOfLegends.TFT;
 using FluentScheduler;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -20,9 +22,8 @@ namespace Czapla.Tasks.LeagueOfLegends.TFT
             {
                 Program.MainLogger.AddMessage("GetTFTItems - attempt to start ");
                 var data = MakeRequestAndGetResponse("https://solomid-resources.s3.amazonaws.com/blitz/tft/data/items.json");
-                 Dictionary<string, TftItems> foo = Drzewo.Configuration.DeserializeJson<Dictionary<string, TftItems>>(data);
-                 
-                 await MongoController.Instance.InsertSingletonDocument("LeagueOfLegends", "TFT", "items", foo);
+                var converted = EntityController.SerializeJsonAndWrapToEntity<Dictionary<string, TftItems>>(data, "items");
+                await MongoController.Instance.InsertSingletonDocument("LeagueOfLegends", "TFT", "items", converted);
                 Program.MainLogger.AddMessage("GetTFTItems - finished");
             }
             catch (Exception ex)
