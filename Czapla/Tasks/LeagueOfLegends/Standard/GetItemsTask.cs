@@ -1,5 +1,7 @@
 ﻿using Czapla.Abstract;
+using Czapla.Controllers;
 using Drzewo;
+using Drzewo.Model.LeagueOfLegends.Standard;
 using FluentScheduler;
 using RestSharp;
 using System;
@@ -17,8 +19,8 @@ namespace Czapla.Tasks.LeagueOfLegends.Standard
             {
                 Program.MainLogger.AddMessage("GetItemsTask - attempt to start ");
                 var data = MakeRequestAndGetResponse($@"http://ddragon.leagueoflegends.com/cdn/{Configuration.CurrentDataDragonVersion}/data/en_US/item.json");
-                await MongoController.Instance.InsertSingletonDocument("LeagueOfLegends", "Standard", "item", data);
-                Program.MainLogger.AddMessage("GetItemsTask - finished");
+                var converted = EntityController.SerializeJsonAndWrapToEntity<StandardItems>(data, "item");
+                await MongoController.Instance.InsertSingletonDocument("LeagueOfLegends", "Standard", "item", converted); Program.MainLogger.AddMessage("GetItemsTask - finished");
             }catch(Exception ex)
             {
                 Program.MainLogger.AddMessage(ex.StackTrace);

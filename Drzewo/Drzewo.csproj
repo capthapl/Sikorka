@@ -11,7 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Model\LeagueOfLegends\Standard\" />
     <Folder Include="Model\Core\" />
   </ItemGroup>
 </Project>
