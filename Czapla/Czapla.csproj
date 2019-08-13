@@ -14,4 +14,7 @@
     <ProjectReference Include="..\Drzewo\Drzewo.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+  </ItemGroup>
 </Project>

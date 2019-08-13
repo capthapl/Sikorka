@@ -20,4 +20,8 @@
   <ItemGroup>
     <Compile Remove="Controllers\ValuesController.cs" />
   </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Drzewo\Drzewo.csproj" />
+  </ItemGroup>
 </Project>

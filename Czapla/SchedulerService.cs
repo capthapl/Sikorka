@@ -21,9 +21,8 @@ namespace Czapla
             Schedule<GetProfileIconsTask>().ToRunNow().AndEvery(5).Hours().DelayFor(175).Seconds();
             Schedule<GetChampionsTask>().ToRunNow().AndEvery(5).Hours().DelayFor(205).Seconds();
             Schedule<GetItemsTask>().ToRunNow().AndEvery(5).Hours().DelayFor(235).Seconds();
-            Schedule<GetMasteriesTask>().ToRunNow().AndEvery(5).Hours().DelayFor(255).Seconds();
-            Schedule<GetRunesTask>().ToRunNow().AndEvery(5).Hours().DelayFor(315).Seconds();
-            Schedule<GetSummonerSpellsTask>().ToRunNow().AndEvery(5).Hours().DelayFor(345).Seconds();
+            //Schedule<GetRunesTask>().ToRunNow().AndEvery(5).Hours().DelayFor(315).Seconds();
+            //Schedule<GetSummonerSpellsTask>().ToRunNow().AndEvery(5).Hours().DelayFor(345).Seconds();
         }
     }
 }

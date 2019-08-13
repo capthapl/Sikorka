@@ -1,5 +1,6 @@
 ﻿<Properties StartupConfiguration="{C9916A6F-827D-4577-8A64-FC74CCEACCCB}|Default">
   <MonoDevelop.Ide.ItemProperties.Czapla PreferredExecutionTarget="MonoDevelop.Default" />
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workbench ActiveDocument="Drzewo/Configuration.cs">
     <Files>
       <File FileName="Czapla/Tasks/LeagueOfLegends/TFT/GetTFTItemsTask.cs" Line="30" Column="1" />
@@ -13,13 +14,48 @@
       <File FileName="AuthServer/Config.cs" />
       <File FileName="Bocian/Controllers/IdentityController.cs" Line="24" Column="1" />
       <File FileName="Drzewo/Configuration.cs" Line="1" Column="1" />
+=======
+  <MonoDevelop.Ide.Workbench ActiveDocument="Drzewo/Model/LeagueOfLegends/TFT/TftOrigins.cs">
+    <Files>
+      <File FileName="Czapla/Tasks/LeagueOfLegends/TFT/GetTFTItemsTask.cs" Line="25" Column="121" />
+      <File FileName="Czapla/Tasks/LeagueOfLegends/TFT/GetTFTClassesTask.cs" Line="22" Column="90" />
+      <File FileName="Czapla/Tasks/LeagueOfLegends/TFT/GetTFTOriginsTask.cs" Line="22" Column="89" />
+      <File FileName="Czapla/Tasks/LeagueOfLegends/TFT/GetTFTTierlistTask.cs" Line="22" Column="90" />
+      <File FileName="Czapla/Tasks/LeagueOfLegends/TFT/GetTFTChampionsTask.cs" Line="1" Column="1" />
+      <File FileName="Czapla/Controllers/EntityController.cs" Line="1" Column="19" />
+      <File FileName="Czapla/SchedulerService.cs" Line="21" Column="14" />
+      <File FileName="Drzewo/Model/LeagueOfLegends/TFT/TftTierList.cs" Line="1" Column="1" />
+      <File FileName="Drzewo/Model/LeagueOfLegends/TFT/TftOrigins.cs" Line="1" Column="1" />
+>>>>>>> fecd9d4d9ef940678fbe68b2142e97ac685dbcbe
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Sikorka" expanded="True">
+<<<<<<< HEAD
             <Node name="Drzewo" expanded="True">
               <Node name="Configuration.cs" selected="True" />
+=======
+            <Node name="Czapla" expanded="True">
+              <Node name="Abstract" expanded="True" />
+              <Node name="Controllers" expanded="True" />
+              <Node name="Tasks" expanded="True">
+                <Node name="LeagueOfLegends" expanded="True">
+                  <Node name="Standard" expanded="True" />
+                  <Node name="TFT" expanded="True" />
+                </Node>
+              </Node>
+            </Node>
+            <Node name="Drzewo" expanded="True">
+              <Node name="Model" expanded="True">
+                <Node name="Core" expanded="True" />
+                <Node name="LeagueOfLegends" expanded="True">
+                  <Node name="TFT" expanded="True">
+                    <Node name="TftOrigins.cs" selected="True" />
+                  </Node>
+                </Node>
+              </Node>
+>>>>>>> fecd9d4d9ef940678fbe68b2142e97ac685dbcbe
             </Node>
           </Node>
         </State>

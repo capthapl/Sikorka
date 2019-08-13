@@ -1,5 +1,7 @@
 ﻿using Czapla.Abstract;
+using Czapla.Controllers;
 using Drzewo;
+using Drzewo.Model.LeagueOfLegends.TFT;
 using FluentScheduler;
 using RestSharp;
 using System;
@@ -17,7 +19,8 @@ namespace Czapla.Tasks.LeagueOfLegends.TFT
             {
                 Program.MainLogger.AddMessage("GetTFTChampionsTask - attempt to start ");
                 var data = MakeRequestAndGetResponse("https://solomid-resources.s3.amazonaws.com/blitz/tft/data/champions.json");
-                await MongoController.Instance.InsertSingletonDocument("LeagueOfLegends", "TFT", "champions", data);
+                var converted = EntityController.SerializeJsonAndWrapToEntity<Dictionary<string, TftChampions>>(data, "champions");
+                await MongoController.Instance.InsertSingletonDocument("LeagueOfLegends", "TFT", "champions", converted);
                 Program.MainLogger.AddMessage("GetTFTChampionsTask - finished");
             }
             catch (Exception ex)
