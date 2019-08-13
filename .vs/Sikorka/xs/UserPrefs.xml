@@ -1,25 +1,26 @@
 ﻿<Properties StartupConfiguration="{C9916A6F-827D-4577-8A64-FC74CCEACCCB}|Default">
   <MonoDevelop.Ide.ItemProperties.Czapla PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="AuthServer/Startup.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Drzewo/Configuration.cs">
     <Files>
-      <File FileName="Bocian/Controllers/ValuesController.cs" Line="46" Column="1" />
-      <File FileName="Bocian/Controllers/IdentityController.cs" />
-      <File FileName="AuthServer/appsettings.Development.json" />
-      <File FileName="AuthServer/Config.cs" Line="36" Column="56" />
-      <File FileName="Bocian/Program.cs" />
-      <File FileName="AuthServer/Startup.cs" Line="40" Column="1" />
-      <File FileName="Bocian/Properties/launchSettings.json" />
-      <File FileName="Bocian/Startup.cs" Line="1" Column="1" />
-      <File FileName="AuthServer/Program.cs" Line="1" Column="1" />
+      <File FileName="Czapla/Tasks/LeagueOfLegends/TFT/GetTFTItemsTask.cs" Line="30" Column="1" />
+      <File FileName="Czapla/Tasks/LeagueOfLegends/TFT/GetTFTClassesTask.cs" />
+      <File FileName="Czapla/Tasks/LeagueOfLegends/TFT/GetTFTOriginsTask.cs" />
+      <File FileName="Czapla/Tasks/LeagueOfLegends/TFT/GetTFTTierlistTask.cs" />
+      <File FileName="Czapla/Tasks/LeagueOfLegends/TFT/GetTFTChampionsTask.cs" />
+      <File FileName="Czapla/SchedulerService.cs" />
+      <File FileName="Czapla/Tasks/LeagueOfLegends/Standard/GetMasteriesTask.cs" />
+      <File FileName="Drzewo/MongoController.cs" />
+      <File FileName="AuthServer/Config.cs" />
+      <File FileName="Bocian/Controllers/IdentityController.cs" Line="24" Column="1" />
+      <File FileName="Drzewo/Configuration.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Sikorka" expanded="True">
-            <Node name="AuthServer" expanded="True">
-              <Node name="Startup.cs" selected="True" />
+            <Node name="Drzewo" expanded="True">
+              <Node name="Configuration.cs" selected="True" />
             </Node>
-            <Node name="Bocian" expanded="True" />
           </Node>
         </State>
       </Pad>
